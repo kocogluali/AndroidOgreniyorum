@@ -1,21 +1,21 @@
 package com.example.sayfalararasigecis
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.sayfalararasigecis.databinding.ActivityBBinding
 import com.example.sayfalararasigecis.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var tasarim:ActivityMainBinding
+class ActivityB : AppCompatActivity() {
+    private lateinit var tasarim:ActivityBBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        tasarim = ActivityMainBinding.inflate(layoutInflater)
+        tasarim = ActivityBBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(tasarim.root)
-        tasarim.buttonGoToB.setOnClickListener {
-            val yeniIntent = Intent(this@MainActivity,ActivityB::class.java)
+
+        tasarim.buttonGoToC.setOnClickListener {
+            val yeniIntent = Intent(this@ActivityB,ActivityC::class.java)
             startActivity(yeniIntent)
         }
     }
 }
-
