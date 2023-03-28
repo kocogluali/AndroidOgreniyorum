@@ -27,7 +27,9 @@ class MainActivity : AppCompatActivity() {
         drawerLayout = findViewById(R.id.drawer)
         navigationView = findViewById(R.id.navigationView)
         navController = findNavController(R.id.fragmentContainerView)
-        appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment,R.id.profileFragment,R.id.settingsFragment),drawerLayout)
+        appBarConfiguration = AppBarConfiguration(setOf
+            (R.id.homeFragment,R.id.profileFragment,R.id.settingsFragment),
+            drawerLayout)
         setupActionBarWithNavController(navController,drawerLayout)
         navigationView.setupWithNavController(navController)
     }
@@ -35,5 +37,6 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.fragmentContainerView)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+
     }
 }
